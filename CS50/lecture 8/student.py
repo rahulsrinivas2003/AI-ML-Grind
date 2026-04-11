@@ -7,13 +7,23 @@ class Student:
         self.name = name
         self.house = house
 
-    @property
+    @property #getter
+    def name(self):
+        return self._name
+    
+    @name.setter #setter 
+    def name(self, name):
+        if not name:
+            raise ValueError("Missing name")
+        self._name = name
 
+        return self._name
+
+    @property
     def house(self):
         return self._house
     
     @house.setter
-
     def house(self, house):
 
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
@@ -23,18 +33,20 @@ class Student:
     def __str__(self):
 
         return f"{self.name} from {self.house}"
+    
+    @classmethod
+    def get(cls):
+
+        name = input("Name: ")
+        house = input("House: ")
+        return cls(name, house)
 
 
 def main():
 
-    student = get_student()
+    student = Student.get()
     print(student)
 
-def get_student():
-
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
 
 if __name__ == "__main__":
 
