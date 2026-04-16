@@ -2,8 +2,7 @@ students = [
     {"name": "Harry", "house": "Gryffindor"},
     {"name": "Draco", "house": "Slytherin"},
     {"name": "Cedric", "house": "Hufflepuff"},
-    {"name": "Luna", "house": "Ravenclaw"},
-
+    {"name": "Luna", "house": "Ravenclaw"}
 ]
 
 houses = set()
